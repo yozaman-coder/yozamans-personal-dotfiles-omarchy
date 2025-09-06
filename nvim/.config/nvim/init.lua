@@ -1,4 +1,4 @@
-vim.env.PATH = vim.env.PATH .. ":./scripts/"
+vim.env.PATH = vim.fn.stdpath("config") .. "/scripts:" .. vim.env.PATH
 
 -- Set <space> as the leader key --
 -- See `:help mapleader`

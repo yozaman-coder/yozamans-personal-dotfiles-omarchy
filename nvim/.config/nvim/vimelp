@@ -1,0 +1,28 @@
+-- Useful stuff
+g + r + a -- look at code suggestion
+g + r + r -- goto references
+g + r + n -- rename across files
+g + r + d -- goto definition
+Ctrl + o -- cursor go back to where it was
+Ctrl + i -- cursor go forward
+:wa -- save all modified buffers
+d + i + ' or " -- delete stuff inside quotes
+
+-- My stuff
+Ctrl + b -- neotree toggle
+Ctrl + n -- create new split terminal
+Ctrl + p -- create new split terminal in current buffer
+Space + c -- cmake build and run
+
+-- Autocomplete
+Ctrl + y -- accept the completion
+- Look at :help ins-completion
+
+
+-- Fuzzy finding
+Space + s + h -- from help
+Space + / -- from current file or just / on its own
+Space + Space -- from existing buffers
+Space + s + f -- search files
+Space + s + . -- search recent files
+- look at :Telescope help_tags

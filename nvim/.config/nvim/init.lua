@@ -383,6 +383,8 @@ require("lazy").setup({
 				{ desc = "split open terminal in current buffer" }
 			)
 
+			vim.keymap.set("n", "<C-q>", "<Cmd>q<CR>", { desc = "quit window" })
+
 			-- Add line above or below
 			vim.keymap.set("n", "<leader>o", "<Cmd>put _<CR>", { desc = "new line below normal mode" })
 			vim.keymap.set("n", "<leader>O", "<Cmd>put! _<CR>", { desc = "new line above normal mode" })

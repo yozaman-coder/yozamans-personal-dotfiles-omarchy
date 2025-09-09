@@ -12,6 +12,7 @@ d + i + ' or " -- delete stuff inside quotes
 Ctrl + b -- neotree toggle
 Ctrl + n -- create new split terminal
 Ctrl + p -- create new split terminal in current buffer
+Ctrl + q -- quick quit
 Space + c -- cmake build and run
 
 -- Autocomplete

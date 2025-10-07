@@ -93,6 +93,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "*__virtual.html",
+  callback = function()
+    vim.bo.buflisted = false
+  end,
+})
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -346,7 +353,7 @@ require("lazy").setup({
     dependencies = {
 
       { -- Mason
-        "mason-org/mason.nvim", 
+        "mason-org/mason.nvim",
         opts = {
           registries = {
             "github:mason-org/mason-registry",

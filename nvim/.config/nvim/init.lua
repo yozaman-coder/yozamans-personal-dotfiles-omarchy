@@ -1,4 +1,5 @@
 -- Add scripts to path
+-- does not work on windows lul
 vim.env.PATH = vim.fn.stdpath("config") .. "/scripts:" .. vim.env.PATH
 
 -- Set <space> as the leader key
@@ -90,13 +91,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
   callback = function()
     vim.hl.on_yank()
-  end,
-})
-
-vim.api.nvim_create_autocmd("BufRead", {
-  pattern = "*__virtual.html",
-  callback = function()
-    vim.bo.buflisted = false
   end,
 })
 
@@ -200,6 +194,9 @@ require("lazy").setup({
     },
     config = function()
       require("telescope").setup({
+        defaults = {
+          file_ignore_patterns = { "%__virtual.html$", "%__virtual.cs$" },
+        },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown(),

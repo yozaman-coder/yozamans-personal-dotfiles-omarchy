@@ -681,6 +681,7 @@ require("lazy").setup({
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
+				"clang-format",
 				"omnisharp",
 			})
 
@@ -724,6 +725,7 @@ require("lazy").setup({
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
+				clangd = { "clang-format" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
@@ -869,6 +871,8 @@ require("lazy").setup({
 			ensure_installed = {
 				"bash",
 				"c",
+        "cpp",
+        "c_sharp",
 				"diff",
 				"html",
 				"lua",
@@ -876,6 +880,7 @@ require("lazy").setup({
 				"markdown",
 				"markdown_inline",
 				"query",
+        "razor",
 				"vim",
 				"vimdoc",
 			},

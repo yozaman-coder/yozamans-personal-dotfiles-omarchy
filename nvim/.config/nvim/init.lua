@@ -871,6 +871,8 @@ require("lazy").setup({
 			ensure_installed = {
 				"bash",
 				"c",
+        "cpp",
+        "c_sharp",
 				"diff",
 				"html",
 				"lua",
@@ -878,6 +880,7 @@ require("lazy").setup({
 				"markdown",
 				"markdown_inline",
 				"query",
+        "razor",
 				"vim",
 				"vimdoc",
 			},

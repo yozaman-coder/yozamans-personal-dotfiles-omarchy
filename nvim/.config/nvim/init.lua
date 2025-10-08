@@ -195,7 +195,7 @@ require("lazy").setup({
     config = function()
       require("telescope").setup({
         defaults = {
-          file_ignore_patterns = { "%__virtual.html$", "%__virtual.cs$" },
+          file_ignore_patterns = { "%__virtual.cs$" },
         },
         extensions = {
           ["ui-select"] = {
@@ -503,6 +503,14 @@ require("lazy").setup({
           },
         },
 
+        rust_analyzer = {},
+
+        html = {},
+
+        jsonls = {},
+
+        ts_ls = {},
+
         lua_ls = {
           settings = {
             Lua = {
@@ -553,6 +561,7 @@ require("lazy").setup({
       },
     },
     opts = {
+      async = true,
       notify_on_error = false,
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
@@ -570,9 +579,16 @@ require("lazy").setup({
       formatters_by_ft = {
         lua = { "stylua" },
         cpp = { "clang-format" },
-        csharp = { "csharpier" },
+        cs = { "csharpier" },
         xml = { "xmlformatter" },
       },
+      formatters = {
+        csharpier = {
+          command = "dotnet-csharpier",
+          args = { "format", "--write-stdout" },
+          to_stdin = true,
+        }
+      }
     },
   },
 
@@ -727,6 +743,7 @@ require("lazy").setup({
         "bash",
         "c",
         "cpp",
+        "css",
         "c_sharp",
         "diff",
         "html",
